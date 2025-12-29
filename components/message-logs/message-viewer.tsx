@@ -37,8 +37,8 @@ function MessageBubble({ message, isClient }: { message: Message; isClient: bool
         <div
           className={cn(
             "rounded-lg px-3 py-2 text-sm",
-            isClient ? "bg-muted" : "bg-[#b8860b]/10",
-            message.flagged && "border border-red-500/30 bg-red-500/5",
+            isClient ? "bg-muted" : "bg-sidebar-primary/10",
+            message.flagged && "border border-destructive/30 bg-destructive/5",
           )}
         >
           {message.content}
@@ -90,7 +90,7 @@ export function MessageViewer({ conversation }: MessageViewerProps) {
           </div>
           <div className="flex items-center gap-2">
             {conversation.status === "Flagged" && (
-              <Badge className="bg-red-500/10 text-red-600 hover:bg-red-500/20">
+              <Badge className="bg-destructive/10 text-destructive hover:bg-destructive/20">
                 <Flag className="h-3 w-3 mr-1" />
                 {flaggedMessages.length} Flagged
               </Badge>

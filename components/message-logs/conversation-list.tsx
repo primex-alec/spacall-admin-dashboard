@@ -28,7 +28,7 @@ export function ConversationList({ conversations, selectedId, onSelect }: Conver
               onClick={() => onSelect(conversation)}
               className={cn(
                 "w-full rounded-lg p-3 text-left transition-colors",
-                isSelected ? "bg-[#b8860b]/10 border border-[#b8860b]/30" : "hover:bg-muted",
+                isSelected ? "bg-sidebar-primary/10 border border-sidebar-primary/30" : "hover:bg-muted",
               )}
             >
               <div className="flex items-start gap-3">
@@ -58,7 +58,7 @@ export function ConversationList({ conversations, selectedId, onSelect }: Conver
                 </div>
                 <div className="flex flex-col items-end gap-1">
                   {conversation.unreadCount > 0 && (
-                    <Badge className="bg-[#b8860b] text-black hover:bg-[#b8860b] h-5 w-5 p-0 flex items-center justify-center text-xs">
+                    <Badge className="bg-sidebar-primary text-sidebar-primary-foreground hover:bg-sidebar-primary/90 h-5 w-5 p-0 flex items-center justify-center text-xs">
                       {conversation.unreadCount}
                     </Badge>
                   )}

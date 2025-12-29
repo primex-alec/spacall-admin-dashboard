@@ -29,7 +29,7 @@ export function DisputePanel({ dispute }: DisputePanelProps) {
   const senderColors = {
     Client: "bg-secondary",
     Therapist: "bg-black text-white",
-    Admin: "bg-[#b8860b] text-black",
+    Admin: "bg-sidebar-primary text-sidebar-primary-foreground",
   }
 
   return (
@@ -45,7 +45,7 @@ export function DisputePanel({ dispute }: DisputePanelProps) {
           <Badge
             className={cn(
               "font-medium",
-              dispute.status === "Open" && "bg-[#b8860b] text-black",
+              dispute.status === "Open" && "bg-sidebar-primary text-sidebar-primary-foreground",
               dispute.status === "Under Review" && "bg-black text-white",
               dispute.status === "Resolved" && "bg-secondary text-foreground",
             )}
@@ -86,7 +86,7 @@ export function DisputePanel({ dispute }: DisputePanelProps) {
           />
           <div className="flex items-center justify-between">
             <div className="flex gap-2">
-              <Button className="bg-[#b8860b] text-black hover:bg-[#e5c55a]">
+              <Button className="bg-sidebar-primary text-sidebar-primary-foreground hover:bg-sidebar-primary/90">
                 <CheckCircle className="mr-2 h-4 w-4" />
                 Resolve in Favor of Client
               </Button>

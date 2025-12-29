@@ -27,7 +27,7 @@ function StarRating({ rating }: { rating: number }) {
       {[1, 2, 3, 4, 5].map((star) => (
         <Star
           key={star}
-          className={cn("h-4 w-4", star <= rating ? "fill-[#b8860b] text-[#b8860b]" : "text-muted-foreground/30")}
+          className={cn("h-4 w-4", star <= rating ? "fill-sidebar-primary text-sidebar-primary" : "text-muted-foreground/30")}
         />
       ))}
     </div>
@@ -37,11 +37,11 @@ function StarRating({ rating }: { rating: number }) {
 function getStatusBadge(status: Review["status"]) {
   switch (status) {
     case "Published":
-      return <Badge className="bg-green-500/10 text-green-600 hover:bg-green-500/20">Published</Badge>
+      return <Badge className="bg-accent text-accent-foreground hover:bg-accent/80">Published</Badge>
     case "Flagged":
-      return <Badge className="bg-orange-500/10 text-orange-600 hover:bg-orange-500/20">Flagged</Badge>
+      return <Badge className="bg-muted text-muted-foreground hover:bg-muted/80">Flagged</Badge>
     case "Hidden":
-      return <Badge className="bg-red-500/10 text-red-600 hover:bg-red-500/20">Hidden</Badge>
+      return <Badge className="bg-destructive/10 text-destructive hover:bg-destructive/20">Hidden</Badge>
   }
 }
 
@@ -233,7 +233,7 @@ export function ReviewTable() {
             <Button variant="outline" onClick={() => setResponseDialogOpen(false)}>
               Cancel
             </Button>
-            <Button onClick={() => setResponseDialogOpen(false)} className="bg-[#b8860b] text-black hover:bg-[#C4A030]">
+            <Button onClick={() => setResponseDialogOpen(false)} className="bg-sidebar-primary text-sidebar-primary-foreground hover:bg-sidebar-primary/90">
               Submit Response
             </Button>
           </DialogFooter>

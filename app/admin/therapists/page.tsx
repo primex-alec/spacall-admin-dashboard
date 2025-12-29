@@ -8,16 +8,16 @@ import { mockTherapists } from "@/lib/mock-data"
 
 export default function TherapistsPage() {
   return (
-      <div className="space-y-6">
+      <div className="space-y-6 bg-background text-foreground">
         {/* Stats Overview */}
         <div className="grid gap-4 md:grid-cols-4">
-          <Card className="border-[color:var(--color-border)]">
+          <Card className="border-border bg-card text-card-foreground">
             <CardContent className="p-4">
               <p className="text-sm text-muted-foreground">Total Therapists</p>
               <p className="text-2xl font-bold">{mockTherapists.length}</p>
             </CardContent>
           </Card>
-          <Card className="border-[color:var(--color-border)]">
+          <Card className="border-border bg-card text-card-foreground">
             <CardContent className="p-4">
               <p className="text-sm text-muted-foreground">Verified</p>
               <p className="text-2xl font-bold">
@@ -25,10 +25,10 @@ export default function TherapistsPage() {
               </p>
             </CardContent>
           </Card>
-          <Card className="border-[color:var(--color-border)]">
+          <Card className="border-border bg-card text-card-foreground">
             <CardContent className="p-4">
               <p className="text-sm text-muted-foreground">Pending Approval</p>
-              <p className="text-2xl font-bold text-[color:var(--color-primary)]">
+                <p className="text-2xl font-bold text-primary">
                 {mockTherapists.filter((t) => t.verificationStatus === "Pending").length}
               </p>
             </CardContent>
@@ -69,7 +69,7 @@ export default function TherapistsPage() {
               <Download className="mr-2 h-4 w-4" />
               Export
             </Button>
-            <Button className="bg-[#b8860b] text-black hover:bg-[#e5c55a]">
+              <Button className="bg-sidebar-primary text-sidebar-primary-foreground hover:bg-sidebar-primary/90">
               <Plus className="mr-2 h-4 w-4" />
               Add Therapist
             </Button>

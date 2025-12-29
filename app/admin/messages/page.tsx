@@ -47,21 +47,21 @@ export default function MessagesPage() {
               </div>
             </CardContent>
           </Card>
-          <Card className="border-[#b8860b]/50">
+          <Card className="border-sidebar-primary/50">
             <CardContent className="p-4 flex items-center gap-4">
-              <div className="h-10 w-10 rounded-full bg-[#b8860b]/10 flex items-center justify-center">
-                <CheckCircle className="h-5 w-5 text-[#b8860b]" />
+              <div className="h-10 w-10 rounded-full bg-sidebar-primary/10 flex items-center justify-center">
+                <CheckCircle className="h-5 w-5 text-sidebar-primary" />
               </div>
               <div>
-                <p className="text-2xl font-bold text-[#b8860b]">{activeCount}</p>
+                <p className="text-2xl font-bold text-sidebar-primary">{activeCount}</p>
                 <p className="text-xs text-muted-foreground">Active Chats</p>
               </div>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-4 flex items-center gap-4">
-              <div className="h-10 w-10 rounded-full bg-red-500/10 flex items-center justify-center">
-                <Flag className="h-5 w-5 text-red-500" />
+              <div className="h-10 w-10 rounded-full bg-destructive/10 flex items-center justify-center">
+                <Flag className="h-5 w-5 text-destructive" />
               </div>
               <div>
                 <p className="text-2xl font-bold">{flaggedCount}</p>

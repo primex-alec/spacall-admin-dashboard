@@ -31,9 +31,9 @@ export function TopTherapistsTable() {
                   <span
                     className={cn(
                       "flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold",
-                      index === 0 && "bg-[#b8860b] text-black",
-                      index === 1 && "bg-[#C0C0C0] text-black",
-                      index === 2 && "bg-[#CD7F32] text-white",
+                      index === 0 && "bg-sidebar-primary text-sidebar-primary-foreground",
+                      index === 1 && "bg-secondary text-foreground",
+                      index === 2 && "bg-accent text-accent-foreground",
                       index > 2 && "bg-muted text-muted-foreground",
                     )}
                   >
@@ -45,8 +45,8 @@ export function TopTherapistsTable() {
                 <TableCell className="text-right font-medium">${therapist.revenue.toLocaleString()}</TableCell>
                 <TableCell className="text-right">
                   <div className="flex items-center justify-end gap-1">
-                    <Star className="h-3 w-3 fill-[#b8860b] text-[#b8860b]" />
-                    <span className={cn(therapist.rating >= 4.9 && "text-[#b8860b] font-medium")}>
+                    <Star className="h-3 w-3 fill-sidebar-primary text-sidebar-primary" />
+                    <span className={cn(therapist.rating >= 4.9 && "text-sidebar-primary font-medium")}>
                       {therapist.rating.toFixed(2)}
                     </span>
                   </div>

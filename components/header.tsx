@@ -37,7 +37,7 @@ export function Header({ title, onMenuClick }: HeaderProps) {
           <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
           <Input
             placeholder="Search bookings, therapists..."
-            className="w-64 pl-9 bg-secondary border-0 focus-visible:ring-[#b8860b]"
+            className="w-64 pl-9 bg-secondary border-0 focus-visible:ring-sidebar-primary"
           />
         </div>
 
@@ -48,7 +48,7 @@ export function Header({ title, onMenuClick }: HeaderProps) {
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" size="icon" className="relative">
               <Bell className="h-5 w-5" />
-              <Badge className="absolute -top-1 -right-1 h-5 w-5 rounded-full bg-[#b8860b] text-black p-0 flex items-center justify-center text-xs">
+              <Badge className="absolute -top-1 -right-1 h-5 w-5 rounded-full bg-sidebar-primary text-sidebar-primary-foreground p-0 flex items-center justify-center text-xs">
                 4
               </Badge>
             </Button>
@@ -75,7 +75,7 @@ export function Header({ title, onMenuClick }: HeaderProps) {
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" size="icon" className="relative">
               <Avatar className="h-8 w-8">
-                <AvatarFallback className="bg-[#b8860b] text-black text-sm font-semibold">SA</AvatarFallback>
+                <AvatarFallback className="bg-sidebar-primary text-sidebar-primary-foreground text-sm font-semibold">SA</AvatarFallback>
               </Avatar>
             </Button>
           </DropdownMenuTrigger>

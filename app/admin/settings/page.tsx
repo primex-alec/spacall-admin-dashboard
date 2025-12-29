@@ -87,7 +87,7 @@ export default function SettingsPage() {
                 </div>
                 <Switch defaultChecked />
               </div>
-              <Button className="bg-[#b8860b] text-black hover:bg-[#e5c55a]">Save Preferences</Button>
+              <Button className="bg-sidebar-primary text-sidebar-primary-foreground hover:bg-sidebar-primary/90">Save Preferences</Button>
             </CardContent>
           </Card>
         </TabsContent>
@@ -121,7 +121,7 @@ export default function SettingsPage() {
                 </div>
                 <Switch />
               </div>
-              <Button className="bg-[#b8860b] text-black hover:bg-[#e5c55a]">Update Security</Button>
+              <Button className="bg-sidebar-primary text-sidebar-primary-foreground hover:bg-sidebar-primary/90">Update Security</Button>
             </CardContent>
           </Card>
         </TabsContent>

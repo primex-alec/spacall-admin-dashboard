@@ -38,7 +38,7 @@ export function PayoutList({ payouts }: PayoutListProps) {
               <div
                 className={cn(
                   "flex h-10 w-10 items-center justify-center rounded-full",
-                  payout.status === "Pending" && "bg-[#b8860b]/10",
+                  payout.status === "Pending" && "bg-sidebar-primary/10",
                   payout.status === "Processing" && "bg-secondary",
                   payout.status === "Completed" && "bg-secondary",
                   payout.status === "Failed" && "bg-destructive/10",
@@ -47,7 +47,7 @@ export function PayoutList({ payouts }: PayoutListProps) {
                 <Icon
                   className={cn(
                     "h-5 w-5",
-                    payout.status === "Pending" && "text-[#b8860b]",
+                    payout.status === "Pending" && "text-sidebar-primary",
                     payout.status === "Processing" && "text-foreground animate-spin",
                     payout.status === "Completed" && "text-green-500",
                     payout.status === "Failed" && "text-destructive",
@@ -65,7 +65,7 @@ export function PayoutList({ payouts }: PayoutListProps) {
                 <Badge
                   className={cn(
                     "font-medium",
-                    payout.status === "Pending" && "bg-[#b8860b] text-black",
+                    payout.status === "Pending" && "bg-sidebar-primary text-sidebar-primary-foreground",
                     payout.status === "Processing" && "bg-black text-white",
                     payout.status === "Completed" && "bg-secondary text-foreground",
                     payout.status === "Failed" && "bg-destructive text-white",
@@ -75,7 +75,7 @@ export function PayoutList({ payouts }: PayoutListProps) {
                 </Badge>
               </div>
               {payout.status === "Pending" && (
-                <Button className="bg-[#b8860b] text-black hover:bg-[#e5c55a]">Approve</Button>
+                <Button className="bg-sidebar-primary text-sidebar-primary-foreground hover:bg-sidebar-primary/90">Approve</Button>
               )}
             </div>
           </div>

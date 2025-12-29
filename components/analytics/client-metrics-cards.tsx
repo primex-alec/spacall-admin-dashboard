@@ -49,13 +49,13 @@ export function ClientMetricsCards() {
   return (
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
       {metrics.map((metric) => (
-        <Card key={metric.title} className={metric.highlight ? "border-[#b8860b]/50" : ""}>
+        <Card key={metric.title} className={metric.highlight ? "border-sidebar-primary/50" : ""}>
           <CardContent className="p-4">
             <div className="flex items-center justify-between">
-              <metric.icon className={`h-5 w-5 ${metric.highlight ? "text-[#b8860b]" : "text-muted-foreground"}`} />
+              <metric.icon className={`h-5 w-5 ${metric.highlight ? "text-sidebar-primary" : "text-muted-foreground"}`} />
             </div>
             <div className="mt-3">
-              <p className={`text-2xl font-bold ${metric.highlight ? "text-[#b8860b]" : ""}`}>{metric.value}</p>
+              <p className={`text-2xl font-bold ${metric.highlight ? "text-sidebar-primary" : ""}`}>{metric.value}</p>
               <p className="text-xs text-muted-foreground mt-1">{metric.title}</p>
             </div>
           </CardContent>

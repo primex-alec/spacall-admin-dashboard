@@ -47,7 +47,7 @@ function RatingBreakdown({ stats }: { stats: TherapistRatingStats }) {
       {breakdown.map(({ stars, count }) => (
         <div key={stars} className="flex items-center gap-2">
           <span className="text-xs w-3">{stars}</span>
-          <Star className="h-3 w-3 fill-[#b8860b] text-[#b8860b]" />
+          <Star className="h-3 w-3 fill-sidebar-primary text-sidebar-primary" />
           <Progress value={(count / total) * 100} className="h-2 flex-1 bg-muted" />
           <span className="text-xs text-muted-foreground w-8">{count}</span>
         </div>
@@ -62,7 +62,7 @@ export function TherapistRatings() {
       {mockTherapistRatings.map((stats) => (
         <div
           key={stats.therapistId}
-          className={cn("rounded-lg border bg-card p-4", stats.averageRating >= 4.9 && "border-[#b8860b]/50")}
+          className={cn("rounded-lg border bg-card p-4", stats.averageRating >= 4.9 && "border-sidebar-primary/50")}
         >
           <div className="flex items-start justify-between mb-4">
             <div className="flex items-center gap-3">
@@ -74,8 +74,8 @@ export function TherapistRatings() {
                 <h3 className="font-semibold">{stats.therapistName}</h3>
                 <div className="flex items-center gap-2">
                   <div className="flex items-center gap-1">
-                    <Star className="h-4 w-4 fill-[#b8860b] text-[#b8860b]" />
-                    <span className={cn("font-bold", stats.averageRating >= 4.9 && "text-[#b8860b]")}>
+                    <Star className="h-4 w-4 fill-sidebar-primary text-sidebar-primary" />
+                    <span className={cn("font-bold", stats.averageRating >= 4.9 && "text-sidebar-primary")}>
                       {stats.averageRating.toFixed(2)}
                     </span>
                   </div>

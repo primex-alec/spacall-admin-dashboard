@@ -15,39 +15,39 @@ export default function BookingsPage() {
   const cancelledBookings = mockBookings.filter((b) => b.status === "Cancelled")
 
   return (
-      <div className="space-y-6">
+      <div className="space-y-6 bg-background text-foreground">
         {/* Stats Overview */}
         <div className="grid gap-4 md:grid-cols-5">
-          <Card className="border-[color:var(--color-border)]">
+          <Card className="border-border bg-card text-card-foreground">
             <CardContent className="p-4">
               <p className="text-sm text-muted-foreground">Total Bookings</p>
               <p className="text-2xl font-bold">{mockBookings.length}</p>
             </CardContent>
           </Card>
-          <Card className="border-[color:var(--color-primary)] bg-[color:var(--color-sidebar)] text-[color:var(--color-sidebar-foreground)]">
+          <Card className="border-sidebar-primary bg-sidebar text-sidebar-foreground">
             <CardContent className="p-4">
-              <p className="text-sm text-[color:var(--color-muted-foreground)]">Ongoing</p>
-              <p className="text-2xl font-bold text-[color:var(--color-primary)]">
+              <p className="text-sm text-muted-foreground">Ongoing</p>
+              <p className="text-2xl font-bold text-sidebar-primary">
                 {mockBookings.filter((b) => b.status === "Ongoing").length}
               </p>
             </CardContent>
           </Card>
-          <Card className="border-[color:var(--color-border)]">
+          <Card className="border-border bg-card text-card-foreground">
             <CardContent className="p-4">
               <p className="text-sm text-muted-foreground">Requested</p>
               <p className="text-2xl font-bold">{mockBookings.filter((b) => b.status === "Requested").length}</p>
             </CardContent>
           </Card>
-          <Card className="border-[color:var(--color-border)]">
+          <Card className="border-border bg-card text-card-foreground">
             <CardContent className="p-4">
               <p className="text-sm text-muted-foreground">Completed</p>
               <p className="text-2xl font-bold">{completedBookings.length}</p>
             </CardContent>
           </Card>
-          <Card className="border-[color:var(--color-border)]">
+          <Card className="border-border bg-card text-card-foreground">
             <CardContent className="p-4">
               <p className="text-sm text-muted-foreground">Cancelled</p>
-              <p className="text-2xl font-bold text-[color:var(--color-destructive)]">{cancelledBookings.length}</p>
+              <p className="text-2xl font-bold text-destructive">{cancelledBookings.length}</p>
             </CardContent>
           </Card>
         </div>
@@ -92,7 +92,7 @@ export default function BookingsPage() {
             <TabsTrigger value="cancelled">Cancelled</TabsTrigger>
           </TabsList>
           <TabsContent value="all">
-            <Card className="border-border">
+            <Card className="border-border bg-card text-card-foreground">
               <CardHeader>
                 <CardTitle>All Bookings</CardTitle>
               </CardHeader>
@@ -102,7 +102,7 @@ export default function BookingsPage() {
             </Card>
           </TabsContent>
           <TabsContent value="active">
-            <Card className="border-border">
+            <Card className="border-border bg-card text-card-foreground">
               <CardHeader>
                 <CardTitle>Active Bookings</CardTitle>
               </CardHeader>
@@ -112,7 +112,7 @@ export default function BookingsPage() {
             </Card>
           </TabsContent>
           <TabsContent value="completed">
-            <Card className="border-border">
+            <Card className="border-border bg-card text-card-foreground">
               <CardHeader>
                 <CardTitle>Completed Bookings</CardTitle>
               </CardHeader>
@@ -122,7 +122,7 @@ export default function BookingsPage() {
             </Card>
           </TabsContent>
           <TabsContent value="cancelled">
-            <Card className="border-border">
+            <Card className="border-border bg-card text-card-foreground">
               <CardHeader>
                 <CardTitle>Cancelled Bookings</CardTitle>
               </CardHeader>

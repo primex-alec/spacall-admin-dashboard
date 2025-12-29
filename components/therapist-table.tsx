@@ -33,7 +33,7 @@ export function TherapistTable({ therapists }: TherapistTableProps) {
           {therapists.map((therapist) => (
             <TableRow
               key={therapist.id}
-              className={cn("hover:bg-secondary/30", isTopRated(therapist.rating) && "bg-[#b8860b]/5")}
+              className={cn("hover:bg-secondary/30", isTopRated(therapist.rating) && "bg-sidebar-primary/5")}
             >
               <TableCell>
                 <div className="flex items-center gap-3">
@@ -49,7 +49,7 @@ export function TherapistTable({ therapists }: TherapistTableProps) {
                   <div>
                     <div className="flex items-center gap-2">
                       <span className="font-medium">{therapist.name}</span>
-                      {isTopRated(therapist.rating) && <Star className="h-4 w-4 fill-[#b8860b] text-[#b8860b]" />}
+                      {isTopRated(therapist.rating) && <Star className="h-4 w-4 fill-sidebar-primary text-sidebar-primary" />}
                     </div>
                     <span className="text-sm text-muted-foreground">{therapist.email}</span>
                   </div>
@@ -62,7 +62,7 @@ export function TherapistTable({ therapists }: TherapistTableProps) {
                     therapist.verificationStatus === "Verified"
                       ? "bg-black text-white"
                       : therapist.verificationStatus === "Pending"
-                        ? "bg-white text-black border border-[#b8860b]"
+                        ? "bg-sidebar-primary/10 text-sidebar-primary border border-sidebar-primary"
                         : "bg-destructive text-white",
                   )}
                 >
@@ -71,8 +71,8 @@ export function TherapistTable({ therapists }: TherapistTableProps) {
               </TableCell>
               <TableCell>
                 <div className="flex items-center gap-1">
-                  <Star className="h-4 w-4 fill-[#b8860b] text-[#b8860b]" />
-                  <span className={cn("font-semibold", isTopRated(therapist.rating) && "text-[#b8860b]")}>
+                  <Star className="h-4 w-4 fill-sidebar-primary text-sidebar-primary" />
+                  <span className={cn("font-semibold", isTopRated(therapist.rating) && "text-sidebar-primary")}>
                     {therapist.rating > 0 ? therapist.rating.toFixed(1) : "N/A"}
                   </span>
                 </div>
@@ -82,7 +82,7 @@ export function TherapistTable({ therapists }: TherapistTableProps) {
               <TableCell>
                 <div className="flex items-center gap-2">
                   {therapist.verificationStatus === "Pending" && (
-                    <Button size="sm" className="bg-[#b8860b] text-black hover:bg-[#e5c55a]">
+                    <Button size="sm" className="bg-sidebar-primary text-sidebar-primary-foreground hover:bg-sidebar-primary/90">
                       <CheckCircle className="mr-1 h-4 w-4" />
                       Approve
                     </Button>

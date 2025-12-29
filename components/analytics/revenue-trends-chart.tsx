@@ -47,7 +47,7 @@ export function RevenueTrendsChart() {
                             day: "numeric",
                           })}
                         </p>
-                        <p className="text-lg font-bold text-[#b8860b]">
+                        <p className="text-lg font-bold text-sidebar-primary">
                           ${payload[0].payload.revenue.toLocaleString()}
                         </p>
                         <p className="text-xs text-muted-foreground">{payload[0].payload.bookings} bookings</p>

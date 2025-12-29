@@ -31,7 +31,7 @@ export function ServicePopularityChart() {
                       <div className="rounded-lg border bg-background p-3 shadow-lg">
                         <p className="text-sm font-medium">{payload[0].payload.service}</p>
                         <p className="text-lg font-bold">{payload[0].payload.bookings} bookings</p>
-                        <p className="text-sm text-[#b8860b]">${payload[0].payload.revenue.toLocaleString()} revenue</p>
+                        <p className="text-sm text-sidebar-primary">${payload[0].payload.revenue.toLocaleString()} revenue</p>
                       </div>
                     )
                   }

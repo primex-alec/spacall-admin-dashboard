@@ -51,7 +51,7 @@ export function Sidebar({ collapsed, onCollapsedChange, mobileOpen, onMobileClos
 
       <aside
         className={cn(
-          "fixed left-0 top-0 z-50 h-screen bg-[#000000] text-white transition-all duration-300",
+          "fixed left-0 top-0 z-50 h-screen bg-sidebar text-sidebar-foreground transition-all duration-300",
           collapsed ? "w-16" : "w-64",
           // Mobile: hidden by default, shown when mobileOpen
           "max-lg:-translate-x-full max-lg:data-[mobile-open=true]:translate-x-0",
@@ -62,24 +62,24 @@ export function Sidebar({ collapsed, onCollapsedChange, mobileOpen, onMobileClos
           {/* Logo */}
           <div
             className={cn(
-              "flex h-16 items-center border-b border-[#333333] px-4",
+              "flex h-16 items-center border-b border-sidebar-border px-4",
               collapsed ? "justify-center" : "justify-between",
             )}
           >
             {!collapsed && (
               <div className="flex items-center gap-2">
-                <Sparkles className="h-6 w-6 text-[#b8860b]" />
+                <Sparkles className="h-6 w-6 text-sidebar-primary" />
                 <span className="text-xl font-bold tracking-tight">Spacall</span>
               </div>
             )}
-            {collapsed && <Sparkles className="h-6 w-6 text-[#b8860b]" />}
+            {collapsed && <Sparkles className="h-6 w-6 text-sidebar-primary" />}
 
             {/* Mobile close button */}
             <Button
               variant="ghost"
               size="icon"
               onClick={onMobileClose}
-              className="h-8 w-8 text-white hover:bg-[#1a1a1a] hover:text-[#b8860b] lg:hidden"
+              className="h-8 w-8 text-sidebar-foreground hover:bg-sidebar hover:text-sidebar-primary lg:hidden"
             >
               <X className="h-4 w-4" />
             </Button>
@@ -90,8 +90,8 @@ export function Sidebar({ collapsed, onCollapsedChange, mobileOpen, onMobileClos
               size="icon"
               onClick={() => onCollapsedChange(!collapsed)}
               className={cn(
-                "h-8 w-8 text-white hover:bg-[#1a1a1a] hover:text-[#b8860b] hidden lg:flex",
-                collapsed && "absolute -right-3 top-6 rounded-full bg-[#000000] border border-[#333333]",
+                "h-8 w-8 text-sidebar-foreground hover:bg-sidebar hover:text-sidebar-primary hidden lg:flex",
+                collapsed && "absolute -right-3 top-6 rounded-full bg-sidebar border border-sidebar-border",
               )}
             >
               {collapsed ? <ChevronRight className="h-4 w-4" /> : <ChevronLeft className="h-4 w-4" />}
@@ -109,26 +109,26 @@ export function Sidebar({ collapsed, onCollapsedChange, mobileOpen, onMobileClos
                   onClick={onMobileClose}
                   className={cn(
                     "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all",
-                    isActive ? "bg-[#b8860b] text-black" : "text-[#999999] hover:bg-[#1a1a1a] hover:text-white",
+                    isActive ? "bg-sidebar-primary text-sidebar-primary-foreground" : "text-muted-foreground hover:bg-sidebar hover:text-sidebar-foreground",
                     collapsed && "justify-center px-2",
                   )}
                 >
-                  <item.icon className={cn("h-5 w-5 shrink-0", isActive && "text-black")} />
+                  <item.icon className={cn("h-5 w-5 shrink-0", isActive && "text-sidebar-primary-foreground")} />
                   {!collapsed && <span>{item.label}</span>}
                 </Link>
               )
             })}
           </nav>
 
-          <div className="border-t border-[#333333] p-3">
+          <div className="border-t border-sidebar-border p-3">
             <div className={cn("flex items-center gap-3 rounded-lg px-3 py-2", collapsed && "justify-center px-2")}>
-              <div className="h-8 w-8 rounded-full bg-[#b8860b] flex items-center justify-center shrink-0">
-                <span className="text-sm font-semibold text-black">SA</span>
+              <div className="h-8 w-8 rounded-full bg-sidebar-primary flex items-center justify-center shrink-0">
+                <span className="text-sm font-semibold text-sidebar-primary-foreground">SA</span>
               </div>
               {!collapsed && (
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-medium truncate">Super Admin</p>
-                  <p className="text-xs text-[#666666] truncate">admin@spacall.com</p>
+                  <p className="text-xs text-muted-foreground truncate">admin@spacall.com</p>
                 </div>
               )}
             </div>

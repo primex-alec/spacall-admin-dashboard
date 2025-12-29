@@ -59,7 +59,7 @@ export default function DisputesPage() {
         {/* Filters */}
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Badge variant="outline" className="border-[#b8860b] text-[#b8860b]">
+            <Badge variant="outline" className="border-sidebar-primary text-sidebar-primary">
               {mockDisputes.length} Total Cases
             </Badge>
           </div>

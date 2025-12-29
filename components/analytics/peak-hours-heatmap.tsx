@@ -8,11 +8,11 @@ const timeSlots = ["6am", "8am", "10am", "12pm", "2pm", "4pm", "6pm", "8pm", "10
 
 function getIntensityColor(value: number, max: number) {
   const intensity = value / max
-  if (intensity > 0.8) return "bg-[#b8860b]"
-  if (intensity > 0.6) return "bg-[#b8860b]/80"
-  if (intensity > 0.4) return "bg-[#b8860b]/60"
-  if (intensity > 0.2) return "bg-[#b8860b]/40"
-  return "bg-[#b8860b]/20"
+  if (intensity > 0.8) return "bg-sidebar-primary"
+  if (intensity > 0.6) return "bg-sidebar-primary/80"
+  if (intensity > 0.4) return "bg-sidebar-primary/60"
+  if (intensity > 0.2) return "bg-sidebar-primary/40"
+  return "bg-sidebar-primary/20"
 }
 
 export function PeakHoursHeatmap() {
@@ -52,7 +52,7 @@ export function PeakHoursHeatmap() {
           <div className="flex items-center justify-end gap-2 pt-2">
             <span className="text-xs text-muted-foreground">Less</span>
             <div className="flex items-center gap-1">
-              {["bg-[#b8860b]/20", "bg-[#b8860b]/40", "bg-[#b8860b]/60", "bg-[#b8860b]/80", "bg-[#b8860b]"].map(
+              {["bg-sidebar-primary/20", "bg-sidebar-primary/40", "bg-sidebar-primary/60", "bg-sidebar-primary/80", "bg-sidebar-primary"].map(
                 (cls, i) => (
                   <div key={i} className={cn("h-3 w-3 rounded-sm", cls)} />
                 ),
