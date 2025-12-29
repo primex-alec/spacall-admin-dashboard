@@ -22,14 +22,12 @@ export default function DashboardPage() {
             icon={Calendar}
             trend={{ value: 12, isPositive: true }}
             highlight
-            className="bg-card text-card-foreground border-border"
           />
           <MetricCard
             title="Online Therapists"
             value={mockDashboardMetrics.onlineTherapists}
             subtitle="Available now"
             icon={Users}
-            className="bg-card text-card-foreground border-border"
           />
           <MetricCard
             title="Total Revenue"
@@ -37,14 +35,12 @@ export default function DashboardPage() {
             subtitle="This month"
             icon={DollarSign}
             trend={{ value: 8, isPositive: true }}
-            className="bg-card text-card-foreground border-border"
           />
           <MetricCard
             title="Pending Payouts"
             value={`$${mockDashboardMetrics.pendingPayouts.toLocaleString()}`}
             subtitle="3 requests pending"
             icon={CreditCard}
-            className="bg-card text-card-foreground border-border"
           />
         </div>
 
