@@ -12,23 +12,23 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Badge } from "@/components/ui/badge"
-
+import { ThemeToggle } from "@/components/theme-toggle"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import Link from "next/link"
-import { ModeToggle } from "@/components/theme/mode-toggle"
 
 interface HeaderProps {
+  title: string
   onMenuClick?: () => void
 }
 
-export function Header({onMenuClick }: HeaderProps) {
+export function Header({ title, onMenuClick }: HeaderProps) {
   return (
     <header className="sticky top-0 z-30 flex h-16 items-center justify-between border-b border-border bg-background px-6">
       <div className="flex items-center gap-4">
         <Button variant="ghost" size="icon" className="lg:hidden" onClick={onMenuClick}>
           <Menu className="h-5 w-5" />
         </Button>
-        <h1 className="text-2xl font-semibold tracking-tight">Welcome!</h1>
+        <h1 className="text-xl font-semibold tracking-tight">{title}</h1>
       </div>
 
       <div className="flex items-center gap-2">
@@ -37,18 +37,18 @@ export function Header({onMenuClick }: HeaderProps) {
           <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
           <Input
             placeholder="Search bookings, therapists..."
-            className="w-64 pl-9 bg-secondary border-0 focus-visible:ring-ring"
+            className="w-64 pl-9 bg-secondary border-0 focus-visible:ring-[#b8860b]"
           />
         </div>
 
-        <ModeToggle />
+        <ThemeToggle />
 
         {/* Notifications */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" size="icon" className="relative">
               <Bell className="h-5 w-5" />
-              <Badge className="absolute -top-1 -right-1 h-5 w-5 rounded-full bg-sidebar-primary text-sidebar-primary-foreground p-0 flex items-center justify-center text-xs">
+              <Badge className="absolute -top-1 -right-1 h-5 w-5 rounded-full bg-[#b8860b] text-black p-0 flex items-center justify-center text-xs">
                 4
               </Badge>
             </Button>
@@ -75,7 +75,7 @@ export function Header({onMenuClick }: HeaderProps) {
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" size="icon" className="relative">
               <Avatar className="h-8 w-8">
-                <AvatarFallback className="bg-sidebar-primary text-sidebar-primary-foreground text-sm font-semibold">SA</AvatarFallback>
+                <AvatarFallback className="bg-[#b8860b] text-black text-sm font-semibold">SA</AvatarFallback>
               </Avatar>
             </Button>
           </DropdownMenuTrigger>

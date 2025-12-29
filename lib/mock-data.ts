@@ -497,7 +497,7 @@ export const mockRevenueData = [
 
 // Mock Booking Status Distribution
 export const mockStatusDistribution = [
-  { status: "Completed", count: 1245, fill: "#D4AF37" },
+  { status: "Completed", count: 1245, fill: "#b8860b" },
   { status: "Ongoing", count: 24, fill: "#000000" },
   { status: "Requested", count: 18, fill: "#666666" },
   { status: "Cancelled", count: 89, fill: "#999999" },
