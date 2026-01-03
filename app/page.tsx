@@ -1,17 +1,19 @@
-import { ModeToggle } from "@/components/theme/mode-toggle";
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
-import Link from "next/link"
+import { Navbar } from "@/components/landing/navbar";
+import { HeroSection } from "@/components/landing/hero-section";
+import { HowItWorks } from "@/components/landing/how-it-works";
+import { TrustSection } from "@/components/landing/trust-section";
+import { RecruitmentSection } from "@/components/landing/recruitment-section";
+import { Footer } from "@/components/landing/footer";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl items-center gap-3.5 py-32 px-16 bg-background">
-        <Button size="lg">
-          <Link href="/admin/dashboard">Go to Dashboard</Link>
-        </Button>
-        <ModeToggle />
-      </main>
+    <div className="min-h-screen bg-[#FAFAF9] font-sans">
+      <Navbar />
+      <HeroSection />
+      <HowItWorks />
+      <TrustSection />
+      <RecruitmentSection />
+      <Footer />
     </div>
   );
 }

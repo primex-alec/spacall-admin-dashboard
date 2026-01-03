@@ -5,12 +5,15 @@ import { Label } from "@/components/ui/label"
 import { Switch } from "@/components/ui/switch"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Separator } from "@/components/ui/separator"
+import UserTable from "@/components/user-table"
+import { mockUsers } from "@/lib/mock-data"
 
 export default function SettingsPage() {
   return (
       <Tabs defaultValue="general" className="space-y-4">
         <TabsList>
           <TabsTrigger value="general">General</TabsTrigger>
+          <TabsTrigger value="users">Users</TabsTrigger>
           <TabsTrigger value="notifications">Notifications</TabsTrigger>
           <TabsTrigger value="security">Security</TabsTrigger>
         </TabsList>
@@ -45,6 +48,23 @@ export default function SettingsPage() {
                 <Switch />
               </div>
               <Button className="bg-[color:var(--color-primary)] text-[color:var(--color-primary-foreground)] hover:bg-[color:var(--color-primary)]/90">Save Changes</Button>
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="users">
+          <Card className="border-border">
+            <CardHeader>
+              <CardTitle>User Management</CardTitle>
+              <CardDescription>Manage admin users, moderators, and support staff</CardDescription>
+              <div className="mt-4">
+                <Button className="bg-[color:var(--color-primary)] text-[color:var(--color-primary-foreground)] hover:bg-[color:var(--color-primary)]/90">
+                  Add New User
+                </Button>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <UserTable users={mockUsers} />
             </CardContent>
           </Card>
         </TabsContent>

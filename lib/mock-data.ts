@@ -141,6 +141,18 @@ export interface Conversation {
   messages: Message[]
 }
 
+export interface User {
+  id: string
+  name: string
+  email: string
+  role: "Admin" | "Moderator" | "Support"
+  status: "Active" | "Inactive"
+  lastLogin: string
+  joinedDate: string
+  avatar?: string
+  permissions: string[]
+}
+
 // Mock Therapists
 export const mockTherapists: Therapist[] = [
   {
@@ -442,6 +454,64 @@ export const mockDisputes: Dispute[] = [
   },
 ]
 
+// Mock Users
+export const mockUsers: User[] = [
+  {
+    id: "USR001",
+    name: "Admin User",
+    email: "admin@spacall.com",
+    role: "Admin",
+    status: "Active",
+    lastLogin: "2024-01-18T14:30:00",
+    joinedDate: "2023-01-01",
+    avatar: "/admin-avatar.jpg",
+    permissions: ["manage_users", "manage_therapists", "manage_disputes", "manage_payments", "view_analytics", "manage_settings"],
+  },
+  {
+    id: "USR002",
+    name: "Sarah Johnson",
+    email: "sarah.j@spacall.com",
+    role: "Moderator",
+    status: "Active",
+    lastLogin: "2024-01-18T09:15:00",
+    joinedDate: "2023-06-15",
+    avatar: "/moderator-sarah.jpg",
+    permissions: ["manage_disputes", "manage_therapists", "view_analytics"],
+  },
+  {
+    id: "USR003",
+    name: "Mike Chen",
+    email: "mike.chen@spacall.com",
+    role: "Support",
+    status: "Active",
+    lastLogin: "2024-01-18T11:45:00",
+    joinedDate: "2023-09-20",
+    avatar: "/support-mike.jpg",
+    permissions: ["respond_to_disputes", "view_messages", "manage_clients"],
+  },
+  {
+    id: "USR004",
+    name: "Emma Williams",
+    email: "emma.w@spacall.com",
+    role: "Moderator",
+    status: "Inactive",
+    lastLogin: "2024-01-10T16:20:00",
+    joinedDate: "2023-05-10",
+    avatar: "/moderator-emma.jpg",
+    permissions: ["manage_disputes", "view_analytics"],
+  },
+  {
+    id: "USR005",
+    name: "David Brown",
+    email: "david.b@spacall.com",
+    role: "Support",
+    status: "Active",
+    lastLogin: "2024-01-18T13:00:00",
+    joinedDate: "2023-11-01",
+    avatar: "/support-david.jpg",
+    permissions: ["respond_to_disputes", "view_messages"],
+  },
+]
 // Mock Alerts
 export const mockAlerts: Alert[] = [
   {
