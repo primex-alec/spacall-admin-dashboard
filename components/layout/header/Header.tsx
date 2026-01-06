@@ -88,7 +88,7 @@ export function Header({onMenuClick }: HeaderProps) {
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuItem asChild>
-              <Link href="/settings" className="flex items-center cursor-pointer">
+              <Link href="/admin/settings" className="flex items-center cursor-pointer">
                 <Settings className="mr-2 h-4 w-4" />
                 <span>Profile Settings</span>
               </Link>
