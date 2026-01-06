@@ -8,6 +8,7 @@ import { Testimonials } from '@/components/landing/Testimonials';
 import { AppShowcase } from '@/components/landing/AppShowcase';
 import { Header } from '@/components/landing/layout/Header';
 import HowItWorks from '@/components/landing/HowItWorks';
+import BeOurTherapist from '@/components/landing/BeOurTherapist';
 
 
 
@@ -32,6 +33,7 @@ function App() {
         <Features />
         <Experience />
         <HowItWorks />
+        <BeOurTherapist />
         <AppShowcase />
         <Testimonials />
       </main>
