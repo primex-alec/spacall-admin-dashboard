@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Apple, Smartphone, Star } from 'lucide-react';
+import { Apple, Smartphone, Star, ChevronsDown } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   return (
@@ -95,9 +95,7 @@ export const Hero: React.FC = () => {
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white/50"
       >
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
-        </svg>
+        <ChevronsDown size={24} className='text-black/50' />
       </motion.div>
     </section>
   );
