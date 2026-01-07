@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Star } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const reviews = [
   {
@@ -28,16 +29,29 @@ export const Testimonials: React.FC = () => {
   return (
     <section className="py-24 bg-background">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
           <span className="text-primary font-medium tracking-widest uppercase text-sm mb-2 block">Testimonials</span>
           <h2 className="text-3xl md:text-5xl font-serif font-bold text-foreground">
             Loved by Busy Professionals
           </h2>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {reviews.map((review, index) => (
-            <div key={index} className="bg-white p-8 rounded-2xl shadow-sm border border-border flex flex-col h-full">
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
+              className="bg-white p-8 rounded-2xl shadow-sm border border-border flex flex-col h-full hover:shadow-elevated transition-shadow duration-300"
+            >
               <div className="flex text-amber-400 mb-6">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <Star key={star} size={16} fill="currentColor" />
@@ -55,7 +69,7 @@ export const Testimonials: React.FC = () => {
                   <p className="text-xs text-muted-foreground uppercase tracking-wide">{review.role}</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
